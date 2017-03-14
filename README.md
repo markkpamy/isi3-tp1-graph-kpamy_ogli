@@ -43,7 +43,7 @@ true false
 [2]
 ```
 
-####Question 1 
+#### Question 1 
 Complétez la [classe Graph](src/main/java/graph/Graph.java) qui implémente l’interface [IDirectedGraph](src/main/java/graph/IDirectedGraph.java) (complétez les méthodes spécifiées « A COM-PLETER »). 
 Vérifiez votre implémentation, vous pouvez entre autre utiliser la classe [TestGraph](src/test/java/TestGraph.java) des tests.
 
@@ -52,14 +52,14 @@ On souhaite maintenant manipuler des graphes non orientés et non valués en imp
 
 ![Package graph](images/packgraph.png)
 
-####Question 2
+#### Question 2
 Proposez une application d’un patron de conception permettant cela en maximisant l’utilisation du code déjà existant. 
 Implémentez votre solution dans une classe **UndirectedGraph**.
 
 On souhaite maintenant réaliser un parcours en largeur sur un graphe, à partir d’un sommet donné. 
 Vous trouverez l’algorithme de parcours en largeur non-récursif sur [http://fr.wikipedia.org/wiki/Algorithme_de_parcours_en_largeur](http://fr.wikipedia.org/wiki/Algorithme_de_parcours_en_largeur).
 
-####Question 3
+#### Question 3
 Implémentez une classe permettant de réaliser ce parcours en largeur sur tout type de [IGraph](src/main/java/graph/IGraph.java). 
 Vous utiliserez le pattern **Iterateur** pour accéder aux sommets un par un, dans l’ordre du parcours. 
 Notamment, décommentez dans [IGraph](src/main/java/graph/IGraph.java) la méthode *creerBFSIterator*, qui renvoie un itérateur pour le parcours en largeur.
@@ -70,7 +70,7 @@ Vérifiez votre implémentation sur différents graphs, vous pouvez entre autre 
 
 L’utilisation d’une pile au lieu d’une file d’attente dans l’algorithme de parcours en largeur précédent transforme cet algorithme en un algorithme de parcours en profondeur.
 
-####Question 4
+#### Question 4
 Implémentez une classe permettant de réaliser un parcours en profondeur sur un graphe, 
 à partir d’un sommet donné. Vous utiliserez le pattern **Iterateur** pour accéder aux sommets un par un, 
 dans l’ordre du parcours. Notamment, décommentez dans [IGraph](src/main/java/graph/IGraph.java) la méthode *creerDFSIterator*, 
