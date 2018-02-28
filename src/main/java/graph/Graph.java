@@ -72,7 +72,7 @@ public class Graph implements IDirectedGraph {
 		//@TODO A COMPLETER
 		return adjacence.get(currentNode)
                 .stream()
-                .map(arc -> arc.getDestination())
+                .map(Arc::getDestination)
                 .collect(toList());
 	}
 	
