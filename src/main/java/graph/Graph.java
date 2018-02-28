@@ -86,13 +86,15 @@ public class Graph implements IDirectedGraph {
 
 		adjacence.forEach((node, arcList) -> {
             graphToString.append("[")
+                    .append("node=")
                     .append(node.toString())
-                    .append(":");
+                    .append(" : ");
             final String arcToString =
                     arcList.stream()
                             .map(arc -> "[" + arc.toString() + "]")
                             .collect(joining(","));
-            graphToString.append(arcToString);
+            graphToString.append(arcToString)
+                    .append("\n");
         });
 
 		return graphToString.toString();
