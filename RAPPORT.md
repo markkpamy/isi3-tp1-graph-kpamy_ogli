@@ -7,6 +7,9 @@
 ## Question 1
 *Expliquer le code ajouté*
 
+```Java
+
+```
 ## Question 2
 *Expliquer le code ajouté et insérer un schéma du patron de conception mis en place*
 

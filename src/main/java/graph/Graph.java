@@ -2,6 +2,7 @@ package graph;
 
 import java.util.*;
 
+import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 public class Graph implements IDirectedGraph {
@@ -52,8 +53,7 @@ public class Graph implements IDirectedGraph {
 	
 	public int getNbNodes(){
 		//@TODO A COMPLETER
-		
-		return 0;
+		return adjacence.keySet().size();
 	}
 	
 	/**
@@ -82,11 +82,19 @@ public class Graph implements IDirectedGraph {
 	public String toString() {
         //@TODO A COMPLETER
         StringBuilder graphToString = new StringBuilder();
-		graphToString.append("Graph \n");
-		for (Node noeuds:
-			 this.getAllNodes()) {
-			graphToString.append(noeuds.toString());
-		}
+        graphToString.append("Graph \n");
+
+		adjacence.forEach((node, arcList) -> {
+            graphToString.append("[")
+                    .append(node.getLabel())
+                    .append(":");
+            final String arcToString =
+                    arcList.stream()
+                            .map(arc -> "[" + arc.toString() + "]")
+                            .collect(joining(","));
+            graphToString.append(arcToString);
+        });
+
 		return graphToString.toString();
 	}
 
