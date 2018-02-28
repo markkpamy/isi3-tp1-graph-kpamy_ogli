@@ -86,7 +86,7 @@ public class Graph implements IDirectedGraph {
 
 		adjacence.forEach((node, arcList) -> {
             graphToString.append("[")
-                    .append(node.getLabel())
+                    .append(node.toString())
                     .append(":");
             final String arcToString =
                     arcList.stream()
