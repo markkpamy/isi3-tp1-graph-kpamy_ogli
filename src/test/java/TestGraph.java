@@ -21,8 +21,15 @@ public class TestGraph {
 		Arc a3 = new Arc(n1,n3, null);
 
 		IDirectedGraph g = new Graph();
-		g.addNode(n1);g.addNode(n2);g.addNode(n3);g.addNode(n4);
-		g.addArc(a1);g.addArc(a1reversed);g.addArc(a2);g.addArc(a2reversed);g.addArc(a3);
+		g.addNode(n1);
+		g.addNode(n2);
+		g.addNode(n3);
+		g.addNode(n4);
+		g.addArc(a1);
+		g.addArc(a1reversed);
+		g.addArc(a2);
+		g.addArc(a2reversed);
+		g.addArc(a3);
 		System.out.println(g);
 		System.out.println(g.hasArc(n1, n2)+" "+g.hasArc(n2, n4));
 		System.out.println(g.getAdjNodes(n3));
