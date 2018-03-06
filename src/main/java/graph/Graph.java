@@ -100,6 +100,13 @@ public class Graph implements IDirectedGraph {
 		return graphToString.toString();
 	}
 
+    @Override
+    public Iterator<Node> creerBFSIterator(Node n) {
+        return null;
+    }
 
-	
+    @Override
+    public Iterator<Node> creerDFSIterator(Node n) {
+        return null;
+    }
 }
