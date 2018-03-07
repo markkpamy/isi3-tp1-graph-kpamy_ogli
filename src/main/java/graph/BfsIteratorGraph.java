@@ -5,15 +5,14 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
-public class BfsIteratorGraph implements Iterator<Node> {
+public class BfsIteratorGraph extends AbstractIterator implements Iterator<Node> {
     private LinkedList<Node> file = new LinkedList<>();
-    private ArrayList<Node> sommetsConsultes = new ArrayList<>();
-    private Graph graph;
+
 
     public BfsIteratorGraph(Graph graph,Node startNode) {
         this.file.add(startNode);
-        this.sommetsConsultes.add(startNode);
-        this.graph=graph;
+        this.getSommetsConsultes().add(startNode);
+        super.setGraph(graph);
     }
 
     @Override
@@ -27,10 +26,10 @@ public class BfsIteratorGraph implements Iterator<Node> {
         if (!hasNext())
             throw new NoSuchElementException();
         Node nextNode = file.remove();
-        for (Node neighbor : graph.getAdjNodes(nextNode)) {
-            if (!this.sommetsConsultes.contains(neighbor)) {
+        for (Node neighbor : this.getGraph().getAdjNodes(nextNode)) {
+            if (!this.getSommetsConsultes().contains(neighbor)) {
                 this.file.add(neighbor);
-                this.sommetsConsultes.add(neighbor);
+                this.getSommetsConsultes().add(neighbor);
             }
         }
         return nextNode;

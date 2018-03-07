@@ -5,21 +5,19 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 
-public class DfsIteratorGraph implements Iterator<Node> {
+public class DfsIteratorGraph extends AbstractIterator implements Iterator<Node> {
     private Stack<Iterator<Node>> stack = new Stack<>();
-    private ArrayList<Node> sommetsConsultes = new ArrayList<>();
     private Node nextNode;
-    private Graph graph;
+
 
     public DfsIteratorGraph(Graph graph,Node startNode) {
         this.stack.push(graph.getAdjNodes(startNode).iterator());
         this.nextNode = startNode;
-        this.graph=graph;
+        this.setGraph(graph);
     }
 
     @Override
     public boolean hasNext() {
-
         return this.nextNode != null;
     }
 
@@ -28,7 +26,7 @@ public class DfsIteratorGraph implements Iterator<Node> {
         if (!hasNext())
             throw new NoSuchElementException();
         try {
-            this.sommetsConsultes.add(this.nextNode);
+            super.getSommetsConsultes().add(this.nextNode);
             return this.nextNode;
         } finally {
             this.increment();
@@ -48,7 +46,7 @@ public class DfsIteratorGraph implements Iterator<Node> {
                 neighborNodeIterator = this.stack.peek();
             }
             this.nextNode = neighborNodeIterator.next();
-        } while (this.sommetsConsultes.contains(this.nextNode));
-        this.stack.push(graph.getAdjNodes(this.nextNode).iterator());
+        } while (this.getSommetsConsultes().contains(this.nextNode));
+        this.stack.push(this.getGraph().getAdjNodes(this.nextNode).iterator());
     }
 }
