@@ -34,7 +34,7 @@ final String arcToString =
 ```
 ## Question 2
 *Expliquer le code ajouté et insérer un schéma du patron de conception mis en place*
-*Le patron de conception utilisé ici est le disgne pattern adapteur*
+*Le patron de conception utilisé ici est le design pattern Adapteur*
 Mettre une image du de la composition
 *Le patron de conception utilisé ici est la composition*
 ```Java
