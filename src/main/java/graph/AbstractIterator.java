@@ -7,6 +7,12 @@ public abstract class AbstractIterator implements Iterator<Node>{
 
     private ArrayList<Node> sommetsConsultes = new ArrayList<>();
     private Graph graph;
+    protected Node nextNode;
+
+    public AbstractIterator(Graph graph, Node startNode) {
+        this.nextNode = startNode;
+        this.setGraph(graph);
+    }
 
     public ArrayList<Node> getSommetsConsultes() {
         return sommetsConsultes;
@@ -23,4 +29,5 @@ public abstract class AbstractIterator implements Iterator<Node>{
     public void setGraph(Graph graph) {
         this.graph = graph;
     }
+
 }

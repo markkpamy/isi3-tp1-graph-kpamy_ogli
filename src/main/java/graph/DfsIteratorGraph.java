@@ -7,18 +7,10 @@ import java.util.Stack;
 
 public class DfsIteratorGraph extends AbstractIterator  {
     private Stack<Iterator<Node>> stack = new Stack<>();
-    private Node nextNode;
-
 
     public DfsIteratorGraph(Graph graph,Node startNode) {
+        super(graph, startNode);
         this.stack.push(graph.getAdjNodes(startNode).iterator());
-        this.nextNode = startNode;
-        this.setGraph(graph);
-    }
-
-    @Override
-    public boolean hasNext() {
-        return this.nextNode != null;
     }
 
     @Override
@@ -47,5 +39,10 @@ public class DfsIteratorGraph extends AbstractIterator  {
             this.nextNode = neighborNodeIterator.next();
         } while (this.getSommetsConsultes().contains(this.nextNode));
         this.stack.push(this.getGraph().getAdjNodes(this.nextNode).iterator());
+    }
+
+    @Override
+    public boolean hasNext() {
+        return this.nextNode != null;
     }
 }

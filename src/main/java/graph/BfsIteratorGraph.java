@@ -9,9 +9,9 @@ public class BfsIteratorGraph extends AbstractIterator {
     private LinkedList<Node> file = new LinkedList<>();
 
     public BfsIteratorGraph(Graph graph,Node startNode) {
+        super(graph, startNode);
         this.file.add(startNode);
         this.getSommetsConsultes().add(startNode);
-        this.setGraph(graph);
     }
 
     @Override

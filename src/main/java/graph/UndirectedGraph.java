@@ -8,14 +8,19 @@ public class UndirectedGraph implements IUndirectedGraph {
 
     private Graph graph;
 
+    public UndirectedGraph() {
+        graph = new Graph();
+    }
+
     @Override
     public void addEdge(Node _node1, Node _node2) {
-
+        graph.addArc(new Arc(_node1, _node2, null));
+        graph.addArc(new Arc(_node2, _node1, null));
     }
 
     @Override
     public boolean hasEdge(Node _node1, Node _node2) {
-        return false;
+        return graph.hasArc(_node1, _node2);
     }
 
     @Override
@@ -40,11 +45,16 @@ public class UndirectedGraph implements IUndirectedGraph {
 
     @Override
     public Iterator<Node> creerBFSIterator(Node n) {
-        return null;
+        return graph.creerBFSIterator(n);
     }
 
     @Override
     public Iterator<Node> creerDFSIterator(Node n) {
-        return null;
+        return graph.creerDFSIterator(n);
+    }
+
+    @Override
+    public String toString() {
+        return graph.toString();
     }
 }
