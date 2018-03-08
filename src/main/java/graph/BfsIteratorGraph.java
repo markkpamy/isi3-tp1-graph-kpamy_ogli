@@ -7,9 +7,6 @@ import java.util.NoSuchElementException;
 
 public class BfsIteratorGraph extends AbstractIterator {
     private LinkedList<Node> file = new LinkedList<>();
-    
-
-
 
     public BfsIteratorGraph(Graph graph,Node startNode) {
         this.file.add(startNode);
