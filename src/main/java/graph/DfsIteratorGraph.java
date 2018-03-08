@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 
-public class DfsIteratorGraph extends AbstractIterator implements Iterator<Node> {
+public class DfsIteratorGraph extends AbstractIterator  {
     private Stack<Iterator<Node>> stack = new Stack<>();
     private Node nextNode;
 

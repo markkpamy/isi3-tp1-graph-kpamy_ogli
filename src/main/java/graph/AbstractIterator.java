@@ -1,8 +1,9 @@
 package graph;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public abstract class AbstractIterator {
+public abstract class AbstractIterator implements Iterator<Node>{
 
     private ArrayList<Node> sommetsConsultes = new ArrayList<>();
     private Graph graph;

@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
-public class BfsIteratorGraph extends AbstractIterator implements Iterator<Node> {
+public class BfsIteratorGraph extends AbstractIterator {
     private LinkedList<Node> file = new LinkedList<>();
 
 
