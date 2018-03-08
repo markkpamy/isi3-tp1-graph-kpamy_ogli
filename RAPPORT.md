@@ -47,4 +47,4 @@ Mettre une image du de la composition
 
 ## Question 4
 *Expliquer le code ajouté et insérer un schéma du patron de conception mis en place*
-![Package graph](images/DfsiteratorGraph.png)
+![Package graph](images/DfsIteratorGraph.png)
