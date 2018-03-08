@@ -34,15 +34,18 @@ final String arcToString =
                             .collect(joining(","));
 ```
 ## Question 2
-*Expliquer le code ajouté et insérer un schéma du patron de conception mis en place*
-*Le patron de conception utilisé ici est le design pattern Adapteur*
-Mettre une image du de la composition
-*Le patron de conception utilisé ici est la composition*
+Le patron de conception utilisé ici est le design pattern Adapter.
+Schéma du patron de conception :
+![Package graph](images/patternAdapter.png)
+
+Nous avons déjà à disposition des méthodes disponibles dans la classe Graphe.
+Nous voulons alors ne pas recoder ces méthodes dans la classe UndirectedGraph. 
+Pour cela, nous allons créer un attribut graph dans la classe UndirectedGraph. Ceci constitue donc une
+relation de composition.
 ```Java
     private Graph graph;
 ```
 ## Question 3
-*Expliquer le code ajouté et insérer un schéma du patron de conception mis en place*
 Le schéma du patron de conception est le suivant :
 ![Package graph](images/Bfsiterator.png)
 Le pattern Iterator permet à un client de parcourir une collection d'éléments sans en connaitre l'implémentation.
@@ -84,9 +87,13 @@ méthodes hasNext() et next():
     }
 ```
 
-
-
-
 ## Question 4
-*Expliquer le code ajouté et insérer un schéma du patron de conception mis en place*
 ![Package graph](images/DfsIteratorGraph.png)
+De la même manière que pour le parcours en largeur, nous allons nous
+servir du pattern Iterator pour implémenter le parcours en profondeur.
+A la place d'une file, nous utiliserons une pile :
+```Java
+    private Stack<Iterator<Node>> stack = new Stack<>();
+```
+Nous créons donc une classe DfsIteratorGraph() qui implémente l'interface Iterator.
+La méthode creerDfsIterator(Node n) retourne un objet DfsIteratorGraph.
