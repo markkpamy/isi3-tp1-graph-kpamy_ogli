@@ -7,19 +7,12 @@ import java.util.NoSuchElementException;
 
 public class BfsIteratorGraph extends AbstractIterator {
     private LinkedList<Node> file = new LinkedList<>();
-    private Node nextNode;
-
-
 
     public BfsIteratorGraph(Graph graph,Node startNode) {
+        this.nextNode = startNode;
         this.file.add(startNode);
         this.getSommetsConsultes().add(startNode);
-        super.setGraph(graph);
-    }
-
-    @Override
-    public boolean hasNext() {
-        return this.nextNode != null;
+        this.setGraph(graph);
     }
 
     @Override
