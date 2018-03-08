@@ -1,6 +1,6 @@
-**Ogli/Fabien Etudiant 1 :**
+**Nom/Prénom Etudiant 1 : Ogli Fabien**
 
-**Kpamy/Mark Etudiant 2 :**
+**Nom/Prénom Etudiant 2 : Kpamy Mark**
 
 # Rapport TP1
 
