@@ -25,8 +25,4 @@ public abstract class AbstractIterator implements Iterator<Node>{
         this.graph = graph;
     }
 
-    @Override
-    public boolean hasNext() {
-        return this.nextNode != null;
-    }
 }

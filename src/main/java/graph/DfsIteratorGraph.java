@@ -41,4 +41,9 @@ public class DfsIteratorGraph extends AbstractIterator  {
         } while (this.getSommetsConsultes().contains(this.nextNode));
         this.stack.push(this.getGraph().getAdjNodes(this.nextNode).iterator());
     }
+
+    @Override
+    public boolean hasNext() {
+        return this.nextNode != null;
+    }
 }

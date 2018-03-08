@@ -59,6 +59,7 @@ public class TestSearch {
 		ug.addEdge(nc, ng);
 		ug.addEdge(na, ne);
 		ug.addEdge(ne, nf);
+        System.out.println(ug);
 
 		Iterator<Node> iterugBFS= ug.creerBFSIterator(na);
 		System.out.println("bfs:");

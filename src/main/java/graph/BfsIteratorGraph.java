@@ -16,10 +16,15 @@ public class BfsIteratorGraph extends AbstractIterator {
     }
 
     @Override
+    public boolean hasNext() {
+        return !this.file.isEmpty();
+    }
+
+    @Override
     public Node next() {
         if (!hasNext())
             throw new NoSuchElementException();
-        this.nextNode = file.remove();
+        Node nextNode = file.remove();
         for (Node neighbor : this.getGraph().getAdjNodes(nextNode)) {
             if (!this.getSommetsConsultes().contains(neighbor)) {
                 this.file.add(neighbor);
