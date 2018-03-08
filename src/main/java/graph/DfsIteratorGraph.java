@@ -26,12 +26,11 @@ public class DfsIteratorGraph extends AbstractIterator  {
         if (!hasNext())
             throw new NoSuchElementException();
         try {
-            super.getSommetsConsultes().add(this.nextNode);
+            this.getSommetsConsultes().add(this.nextNode);
             return this.nextNode;
         } finally {
             this.increment();
         }
-
     }
 
     private void increment() {
