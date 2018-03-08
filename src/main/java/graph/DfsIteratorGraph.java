@@ -9,9 +9,8 @@ public class DfsIteratorGraph extends AbstractIterator  {
     private Stack<Iterator<Node>> stack = new Stack<>();
 
     public DfsIteratorGraph(Graph graph,Node startNode) {
+        super(graph, startNode);
         this.stack.push(graph.getAdjNodes(startNode).iterator());
-        this.nextNode = startNode;
-        this.setGraph(graph);
     }
 
     @Override
