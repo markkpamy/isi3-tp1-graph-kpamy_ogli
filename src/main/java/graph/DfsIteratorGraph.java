@@ -30,7 +30,7 @@ public class DfsIteratorGraph extends AbstractIterator  {
             return this.nextNode;
         } finally {
             this.increment();
-        }
+         }
     }
 
     private void increment() {
