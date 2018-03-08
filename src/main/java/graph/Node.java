@@ -1,5 +1,7 @@
 package graph;
 
+import java.util.Objects;
+
 /**
  * Classe representant un noeud etiquete pour un graph
  * 
@@ -46,8 +48,11 @@ public class Node {
      */
     public Label getLabel() { return label; }
 
-    
-    
+	@Override
+	public int hashCode() {
+		return Objects.hash(label);
+	}
+
 	@Override
 	public String toString() {
 		return ""+label;
